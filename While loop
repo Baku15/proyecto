@@ -1,0 +1,131 @@
+Entrada de usuario y bucles while.
+La mayoría de los programas están escritos para resolver un final
+problema del usuario. Para hacerlo, normalmente necesita
+para obtener información del usuario. Para
+ejemplo simple, digamos que alguien quiere encontrar
+saber si tienen la edad suficiente para votar. Si escribe un
+programa para responder a esta pregunta, debe conocer la edad del usuario antes
+puede dar una respuesta. El programa deberá pedirle al usuario que ingrese,
+o entrada, su edad; Una vez que el programa tiene esta entrada, puede compararla con la
+edad de voto para determinar si el usuario tiene la edad suficiente y luego informar el resultado.
+En este capítulo, aprenderá a aceptar la entrada del usuario para que su programa
+luego puede trabajar con él. Cuando su programa necesite un nombre, podrá
+para solicitar al usuario un nombre. Cuando su programa necesite una lista de nombres,
+podrá solicitar al usuario una serie de nombres. Para hacer esto, usará
+la función input ().
+También aprenderá a mantener los programas en ejecución todo el tiempo que los usuarios quieran
+para que puedan ingresar toda la información que necesiten; entonces tu
+El programa puede trabajar con esa información. Usarás el bucle while de Python para
+mantener los programas en ejecución siempre que se cumplan determinadas condiciones.
+
+Con la capacidad de trabajar con la entrada del usuario y la capacidad de controlar cómo
+Mientras se ejecuten sus programas, podrá escribir programas totalmente interactivos.
+Cómo funciona la función input ()
+La función input () pausa su programa y espera a que el usuario ingrese
+algún texto. Una vez que Python recibe la entrada del usuario, asigna esa entrada a un
+variable para que le resulte más cómodo trabajar.
+Por ejemplo, el siguiente programa le pide al usuario que ingrese algún texto,
+luego muestra ese mensaje al usuario:
+parrot.py message = input ("Dime algo y te lo repetiré:")
+imprimir (mensaje)
+La función input () toma un argumento: la solicitud, o instrucciones,
+que queremos mostrarle al usuario para que sepa qué hacer. En este ejemplo,
+cuando Python ejecuta la primera línea, el usuario ve el mensaje Dime algo,
+y te lo repetiré:. El programa espera mientras el usuario ingresa
+su respuesta y continúa después de que el usuario presiona Enter. La respuesta es
+asignado a la variable mensaje, luego imprimir (mensaje) muestra la entrada de nuevo a
+el usuario:
+Dime algo y te lo repetiré: ¡Hola a todos!
+¡Hola, todos!
+N ota Sublime Text y muchos otros editores no ejecutan programas que soliciten al usuario una entrada.
+Puede utilizar estos editores para escribir programas que soliciten entrada, pero deberá ejecutar
+estos programas desde una terminal. Consulte "Ejecución de programas Python desde una terminal" en
+pagina 12.
+Escribir indicaciones claras
+Cada vez que utilice la función input (), debe incluir un mensaje claro y fácil de
+Siga el mensaje que le dice al usuario exactamente qué tipo de información está
+buscando. Cualquier declaración que le diga al usuario qué ingresar debería funcionar. Para
+ejemplo:
+greeter.py name = input ("Por favor ingrese su nombre:")
+print (f "\ n¡Hola, {nombre}!")
+Agregue un espacio al final de las indicaciones (después de los dos puntos en el
+ejemplo) para separar el mensaje de la respuesta del usuario y hacer
+deje claro a su usuario dónde ingresar su texto. Por ejemplo:
+
+A veces, querrá escribir un mensaje de más de una línea.
+
+Por ejemplo, es posible que desee decirle al usuario por qué solicita cierta
+aporte. Puede asignar su mensaje a una variable y pasar esa variable a la
+función input (). Esto le permite construir su mensaje en varias líneas,
+luego escriba una declaración de entrada limpia ().
+greeter.py prompt = "Si nos dice quién es, podemos personalizar los mensajes que ve".
+prompt + = "\ n¿Cuál es tu nombre?"
+nombre = entrada (mensaje)
+print (f "\ n¡Hola, {nombre}!")
+Este ejemplo muestra una forma de construir una cadena de varias líneas. La primera linea
+asigna la primera parte del mensaje a la variable prompt. En el segundo
+línea, el operador + = toma la cadena que se asignó al indicador y agrega
+la nueva cuerda en el extremo.
+El mensaje ahora se extiende por dos líneas, nuevamente con espacio después de la pregunta.
+marcar para mayor claridad:
+ Si nos dice quién es, podemos personalizar los mensajes que ve.
+¿Cuál es tu primer nombre? Eric
+¡Hola, Eric!
+Usando int () para aceptar entrada numérica
+Cuando usa la función input (), Python interpreta todo lo que el usuario
+entra como una cadena. Considere la siguiente sesión de intérprete, que solicita
+la edad del usuario:
+>>> edad = entrada ("¿Cuántos años tienes?")
+¿Cuántos años tienes? 21
+>>> edad
+'21'
+El usuario ingresa el número 21, pero cuando le pedimos a Python el valor de
+edad, devuelve '21', la representación de cadena del valor numérico ingresado.
+Sabemos que Python interpretó la entrada como una cadena porque el número ahora es
+entre comillas. Si todo lo que quiere hacer es imprimir la entrada, esto funciona bien. Pero
+si intenta utilizar la entrada como un número, obtendrá un error:
+>>> edad = entrada ("¿Cuántos años tienes?")
+¿Cuántos años tienes? 21
+u >>> edad> = 18
+Rastreo (llamadas recientes más última):
+ Archivo "<stdin>", línea 1, en <módulo>
+v TypeError: tipos no ordenables: str ()> = int ()
+
+
+Cuando intenta utilizar la entrada para hacer una comparación numérica u, Python
+produce un error porque no puede comparar una cadena con un entero: la cadena
+'21' que se asigna a la edad no se puede comparar con el valor numérico 18 v.
+Podemos resolver este problema usando la función int (), que dice
+Python para tratar la entrada como un valor numérico. La función int ()
+convierte una representación de cadena de un número en una representación numérica,
+como se muestra aquí:
+>>> edad = entrada ("¿Cuántos años tienes?")
+¿Cuántos años tienes? 21
+u >>> edad = int (edad)
+>>> edad> = 18
+Cierto
+En este ejemplo, cuando ingresamos 21 en el indicador, Python interpreta el
+número como una cadena, pero el valor luego se convierte en una representación numérica
+tation por int () u. Ahora Python puede ejecutar la prueba condicional: compara la edad
+ (que ahora representa el valor numérico 21) y 18 para ver si la edad es mayor
+igual o superior a 18. Esta prueba se evalúa como Verdadero.
+¿Cómo se usa la función int () en un programa real? Considere un
+programa que determina si las personas son lo suficientemente altas para montar en patines
+portavasos:
+rollercoaster.py height = input ("¿Cuánto mides, en pulgadas?")
+altura = int (altura)
+si altura> = 48:
+ print ("\ n¡Eres lo suficientemente alto para montar!")
+demás:
+ print ("\ nPodrás montar cuando seas un poco mayor")
+El programa puede comparar la altura con 48 porque altura = int (altura)
+convierte el valor de entrada en una representación numérica antes de la comparación
+hijo está hecho. Si el número ingresado es mayor o igual a 48, le decimos
+el usuario que es lo suficientemente alto:
+¿Qué tan alto es usted, en pulgadas? 71
+¡Eres lo suficientemente alto para montar!
+Cuando utiliza la entrada numérica para hacer cálculos y comparaciones,
+asegúrese de convertir el valor de entrada a una representación numérica primero.
+El operador de módulo
+Una herramienta útil para trabajar con información numérica es el operador de módulo (%),
+que divide un número por otro número y devuelve el resto:
