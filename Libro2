@@ -1,0 +1,132 @@
+Todos estos alienígenas tienen las mismas características, pero Python consideró
+cada uno es un objeto separado, lo que nos permite modificar cada extraterrestre
+individualmente.
+¿Cómo podrías trabajar con un grupo de extraterrestres como este? Imagina ese
+El aspecto de un juego tiene algunos extraterrestres que cambian de color y se mueven más rápido
+el juego progresa. Cuando llega el momento de cambiar los colores, podemos usar un bucle for y
+una declaración if para cambiar el color de los extraterrestres. Por ejemplo, para cambiar el
+los primeros tres alienígenas a los alienígenas amarillos de velocidad media valen 10 puntos cada uno,
+podría hacer esto:
+
+Debido a que queremos modificar los primeros tres alienígenas, recorremos un
+
+rebanada que incluye solo los tres primeros alienígenas. Todos los extraterrestres son verdes ahora
+pero ese no siempre será el caso, por lo que escribimos una declaración if para asegurarnos
+
+...
+Puede expandir este bucle agregando un bloque elif que se vuelve amarillo
+extraterrestres en rojo, los rápidos valen 15 puntos cada uno. Sin mostrar el
+programa completo de nuevo, ese bucle se vería así:
+
+Es común almacenar varios diccionarios en una lista cuando cada dic-
+cionario contiene muchos tipos de información sobre un objeto. Por ejemplo,
+puede crear un diccionario para cada usuario en un sitio web, como hicimos en user.py
+en la página 100 y almacene los diccionarios individuales en una lista denominada usuarios. Todos
+de los diccionarios de la lista debe tener una estructura idéntica para que pueda
+recorrer la lista y trabajar con cada objeto de diccionario de la misma manera.
+Una lista en un diccionario
+En lugar de poner un diccionario dentro de una lista, a veces es útil poner
+una lista dentro de un diccionario. Por ejemplo, considere cómo podría describir un
+pizza que alguien está pidiendo. Si tuviera que usar solo una lista, todo lo que podría
+realmente tienda es una lista de los ingredientes de la pizza. Con un diccionario, una lista de los mejores
+Los pings pueden ser solo un aspecto de la pizza que está describiendo.
+En el siguiente ejemplo, se almacenan dos tipos de información para cada
+pizza: un tipo de corteza y una lista de ingredientes. La lista de ingredientes es un valor.
+asociado con las 'coberturas' clave. Para utilizar los elementos de la lista, damos el
+nombre del diccionario y la clave 'ingredientes', como lo haríamos con cualquier valor en el
+diccionario. En lugar de devolver un solo valor, obtenemos una lista de ingredientes:
+
+
+Comenzamos en u con un diccionario que contiene información sobre un
+
+pizza que se ha pedido. Una clave en el diccionario es 'corteza', y
+
+el valor asociado es la cadena 'gruesa'. La siguiente clave, 'coberturas', tiene un
+
+list como su valor que almacena todos los ingredientes solicitados. En v resumimos el
+
+orden antes de construir la pizza. Cuando necesitas romper una larga fila
+
+en una llamada a print (), elija un punto apropiado en el que romper la línea
+
+que se está imprimiendo y finalice la línea entre comillas. Sangrar el siguiente
+
+línea, agregue una comilla de apertura y continúe la cadena. Pitón
+combinará automáticamente todas las cadenas que encuentre dentro del pariente
+tesis. Para imprimir los ingredientes, escribimos un bucle for w. Para acceder a la lista de
+coberturas, usamos la clave 'coberturas', y Python toma la lista de coberturas
+del diccionario.
+El siguiente resultado resume la pizza que planeamos construir:
+Pidió una pizza de masa gruesa con los siguientes ingredientes:
+ champiñones
+ extra queso
+Puede anidar una lista dentro de un diccionario en cualquier momento que desee más de
+un valor que se asociará con una sola clave en un diccionario. En el anterior
+ejemplo de lenguajes de programación favoritos, si tuviéramos que almacenar cada
+respuestas de una persona en una lista, las personas pueden elegir más de un favorito
+idioma. Cuando recorremos el diccionario, el valor asociado con
+cada persona sería una lista de idiomas en lugar de un solo idioma.
+Dentro del bucle for del diccionario, usamos otro bucle for para ejecutarlo
+la lista de idiomas asociados a cada persona:
+
+Como puede ver en u, el valor asociado con cada nombre es ahora un
+lista. Observe que algunas personas tienen un idioma favorito y otras tienen múltiples favoritos. Cuando recorremos el diccionario en v, usamos el
+idiomas de nombres de variables para contener cada valor del diccionario, porque
+Sepa que cada valor será una lista. Dentro del ciclo principal del diccionario, usamos
+otro bucle for w para recorrer la lista de idiomas favoritos de cada persona.
+Ahora cada persona puede enumerar tantos idiomas favoritos como desee:
+Los idiomas favoritos de Jen son:
+ Pitón
+ Rubí
+Los idiomas favoritos de Sarah son:
+ C
+Los idiomas favoritos de Phil son:
+ Pitón
+ Haskell
+Los idiomas favoritos de Edward son:
+ Rubí
+ Vamos
+Para refinar aún más este programa, puede incluir una declaración if:
+al principio del bucle for del diccionario para ver si cada
+persona tiene más de un idioma favorito al examinar el valor de
+len (idiomas). Si una persona tiene más de un favorito, la salida sería
+permanecer igual. Si la persona tiene un solo idioma favorito, puede
+cambie la redacción para reflejar eso. Por ejemplo, podrías decir Sarah's
+El idioma favorito es C.
+N ota No debe anidar listas y diccionarios con demasiada profundidad. Si anida muchos elementos
+más profundo de lo que ve en los ejemplos anteriores o está trabajando con alguien
+el código de otra persona con niveles significativos de anidamiento, lo más probable es que sea una forma más sencilla de resolver el
+el problema existe.
+Un diccionario en un diccionario
+Puede anidar un diccionario dentro de otro diccionario, pero su código puede obtener
+complicado rápidamente cuando lo haces. Por ejemplo, si tiene varios usuarios
+para un sitio web, cada uno con un nombre de usuario único, puede utilizar los nombres de usuario como
+las claves en un diccionario. A continuación, puede almacenar información sobre cada usuario
+utilizando un diccionario como valor asociado a su nombre de usuario. En el siguiente
+listado, almacenamos tres piezas de información sobre cada usuario: su
+nombre, apellido y ubicación. Accederemos a esta información haciendo un bucle
+a través de los nombres de usuario y el diccionario de información asociada a
+cada nombre de usuario:
+
+Primero definimos un diccionario llamado usuarios con dos claves: una para cada
+nombres de usuario 'aeinstein' y 'mcurie'. El valor asociado con cada clave es un
+diccionario que incluye el nombre, el apellido y la ubicación de cada usuario. En ti
+recorremos el diccionario de los usuarios. Python asigna cada tecla a la variable
+nombre de usuario, y el diccionario asociado con cada nombre de usuario se asigna al
+variable user_info. Una vez dentro del ciclo principal del diccionario, imprimimos el usuario-
+nombre en v.
+En w comenzamos a acceder al diccionario interno. La variable user_info,
+que contiene el diccionario de información del usuario, tiene tres claves: 'primera',
+'último' y 'ubicación'. Usamos cada clave para generar un formato completo
+nombre y ubicación de cada persona, y luego imprima un resumen de lo que
+saber de cada usuario x:
+Nombre de usuario: aeinstein
+ Nombre completo: Albert Einstein
+ Ubicación: Princeton
+Nombre de usuario: mcurie
+ Nombre completo: Marie Curie
+ Ubicación: Paris
+Tenga en cuenta que la estructura del diccionario de cada usuario es idéntica. A pesar de que
+Python no lo requiere, esta estructura hace que los diccionarios anidados sean más fáciles de
+trabajar con. Si el diccionario de cada usuario tiene claves diferentes, el código dentro del
+for loop sería más complicado.
