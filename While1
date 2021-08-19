@@ -31,3 +31,11 @@ El operador de módulo no le dice cuántas veces un número encaja en otro; simp
 Cuando un número es divisible por otro número, el resto es 0, por lo que el operador de módulo siempre devuelve 0. Puede usar este hecho para determinar si un número es par o impar:
 
 Los números pares siempre son divisibles por dos, por lo que si el módulo de un número y dos es cero (aquí, si el número% 2 == 0) el número es par. De lo contrario, es extraño.
+
+Inténtalo tú mismo
+7-1. Coche de alquiler: escriba un programa que le pregunte al usuario qué tipo de 
+coche de alquiler le gustaría. Imprime un mensaje sobre ese auto, como "Déjame ver si puedo buscarte un Subaru".
+7-2. Asientos en el restaurante: escriba un programa que pregunte al usuario cuántas 
+personas hay en su grupo de cena. Si la respuesta es más de ocho, imprima un mensaje que diga que tendrán que esperar por una mesa. 
+De lo contrario, informe que su mesa está lista.
+7-3. Múltiplos de diez: pida al usuario un número y luego informe si el número es múltiplo de 10 o no.
