@@ -1,0 +1,33 @@
+Cuando usa la función input (), Python interpreta todo lo que ingresa el usuario como una cadena. 
+Considere la siguiente sesión de intérprete, que pregunta por la edad del usuario:
+
+El usuario ingresa el número 21, pero cuando le preguntamos a Python por el valor de la edad, devuelve '21',
+la representación de cadena del valor numérico ingresado. Sabemos que Python interpretó la entrada como una cadena porque 
+el número ahora está entre comillas. Si todo lo que quiere hacer es imprimir la entrada, esto funciona bien. 
+Pero si intenta utilizar la entrada como un número, obtendrá un error:
+
+Cuando intenta usar la entrada para hacer una comparación numérica u, Python produce un error porque no puede comparar una cadena con un
+número entero: la cadena '21' que se asigna a la edad no se puede comparar con el valor numérico 18 v .
+Podemos resolver este problema usando la función int (), que dice
+Python para tratar la entrada como un valor numérico. La función int () convierte una 
+representación de cadena de un número en una representación numérica, como se muestra aquí:
+
+En este ejemplo, cuando ingresamos 21 en el indicador, Python interpreta el número como una cadena, pero el valor 
+luego se convierte en una representación numérica mediante int () u. Ahora Python puede ejecutar la prueba condicional: 
+ompara la edad (que ahora representa el valor numérico 21) y 18 para ver si la edad es mayor o igual a 18. Esta prueba se evalúa como Verdadero.
+¿Cómo se usa la función int () en un programa real? Considere un programa que determina si las personas
+son lo suficientemente altas para montar en una montaña rusa:
+
+El programa puede comparar la altura con 48 porque altura = int (altura) convierte el valor de entrada en una representación 
+numérica antes de realizar la comparación. Si el número ingresado es mayor o igual a 48, le decimos al usuario que es lo suficientemente alto:
+¿Qué tan alto es usted, en pulgadas? 71
+¡Eres lo suficientemente alto para montar!
+Cuando utilice la entrada numérica para hacer cálculos y comparaciones, asegúrese de convertir primero el valor de 
+entrada a una representación numérica. El operador de módulo
+Una herramienta útil para trabajar con información numérica es el operador de módulo (%), que divide un número
+por otro número y devuelve el resto:
+
+El operador de módulo no le dice cuántas veces un número encaja en otro; simplemente le dice cuál es el resto.
+Cuando un número es divisible por otro número, el resto es 0, por lo que el operador de módulo siempre devuelve 0. Puede usar este hecho para determinar si un número es par o impar:
+
+Los números pares siempre son divisibles por dos, por lo que si el módulo de un número y dos es cero (aquí, si el número% 2 == 0) el número es par. De lo contrario, es extraño.
